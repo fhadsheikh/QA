@@ -1,0 +1,202 @@
+/* HTML */
+
+body {
+    color:#656565;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1,h2,h3 {
+    font-family: 'Roboto Slab', serif;
+}
+
+.center{
+    text-align:center;
+}
+
+.spacer {
+    margin-top:10px;
+}
+
+.white{
+    background:white;
+}
+.label-as-badge {
+    border-radius: 1em;
+}
+/* NAVBAR OVERIDES */
+
+.navbar{
+    background:#003b60;
+    border-radius:0px;
+    box-shadow: 8px 0 5px -6px rgba(0, 0, 0, 0.06), -8px 0 5px -6px rgba(0, 0, 0, 0.06), 0 5px 5px -3px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-brand {
+    color:white !important;
+}
+
+ .navbar-default .navbar-nav > .active > a, 
+ .navbar-default .navbar-nav > .active > a:hover, 
+ .navbar-default .navbar-nav > .active > a:focus {
+      color: #ffffff;
+      background: #da4453;
+ }
+
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>li>a:visited{
+    color: white;
+}
+
+.subnav.navbar-default .navbar-nav>li>a,
+.subnav.navbar-default .navbar-nav>li>a:visited{
+    color: #00619E  !important;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #da4453;
+}
+
+.navbar .nav > li.dropdown.open.active > a:hover, 
+.navbar .nav > li.dropdown.open > a
+{
+   color: #fff;
+   background-color: #da4453;
+   border-color: #fff;
+}
+
+/* LIST GROUP OVERIDES */
+
+.list-group-item{
+    border-radius:0px;
+    border: none !important;
+}
+
+/* LOGIN PAGE */
+
+.login-container{
+    margin-top:200px;
+    text-align:center;
+}
+
+.login-logo{
+    font-size:50pt;
+    color: #ed5565;
+}
+
+/* TICKET PAGE */
+
+.titlebar{
+    margin-top:-20px;
+    padding: 10px;
+    box-shadow: 8px 0 5px -6px rgba(0, 0, 0, 0.06), -8px 0 5px -6px rgba(0, 0, 0, 0.06), 0 5px 5px -3px rgba(0, 0, 0, 0.06);
+}
+
+.ticketaction{
+    font-size:16pt;
+    margin-right:40px;
+    margin-top:30px;
+}
+
+.message{
+    margin:15px;
+    padding:0px 20px 0px 20px;
+    background:#fbfbfb;
+    border-radius:5px;
+    
+}
+
+.borderclient{
+    border-right: solid 2px orange;
+}
+
+.bordertech{
+    border-right: solid 2px green;
+}
+
+.details{
+    padding: 15px 40px 0px 40px;
+}
+
+.details a {
+    color:#003b60;
+}
+
+
+/* MAIN SEARCH BOX */
+
+.col-group {overflow:hidden}
+
+.col-left {
+  width:50%;
+  float:left;
+}
+
+.col-right {
+  width:50%;
+  float:right;
+}
+
+@media (max-width:600px) {
+  .col-left,
+  .col-right {
+    float:none;
+    display:block;
+    width:auto;
+  }
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  margin:0;
+  padding:0;
+  border:none;
+  outline:none;
+}
+
+.form-search {margin:0 10px 10px 0}
+
+.form-search-field,
+.form-search-submit {
+  display:block;
+  background-color:white;
+  color:#666;
+  font:inherit;
+  line-height:normal;
+  border:1px solid #ccc;
+  border-top-color:#aaa;
+  padding:10px;
+  outline:none;
+  box-sizing:border-box;
+  text-shadow:none;
+  text-align:left;
+}
+
+.form-search-wrapper {
+  position:relative;
+  margin-right:125px;
+}
+
+.form-search-field {
+  width:100%;
+  box-shadow:inset 0 1px 1px rgba(0,0,0,.1);
+}
+
+.form-search-submit {
+  width:115px;
+  padding-right:0;
+  padding-left:40px;
+  background:#da4453   url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH3QwPCzE0FFtE4AAAAQlJREFUOMuVkr1KxFAUhOekUrAR/CksfActRX0BS0HEF7BbsBQLkbW2ULBSe8VCWB9EEBsFwdLOdQVxYT+biVzCJt4MBHLnzJmbkzOhBMCcpF1JG5IWTb9J6kk6j4h31QHYBgbUYwDs1DVvAiMLb4E1YNrPKnDj2gjYqjbPAB8WHDZ84YE1fY/6Vzhyoad/ANxZe5ySDybXMwxWrH1MyU+TUxkGE9Z+AyFJhdohJJH2FZJe/b6cYbBkk5eIoDS4d7GTYVBqrtO55pM17jXM37FmCMzmBGnSPy0NUokroBgX5a+GKA8r58txJgvACfAM/Fj4BOw7sRcVk9NWOwQK31yir7awyZnD1P0F9SaVT76pzq4AAAAASUVORK5CYII=') no-repeat 15px 50%;
+  border-color:#467903 #467903 #243e03;
+  color:white;
+  position:absolute;
+  top:0;
+  left:100%;
+  margin-left:10px;
+  cursor:pointer;
+  box-shadow:1px 1px 1px rgba(0,0,0,.2);
+}
+
+.form-search-submit:focus,
