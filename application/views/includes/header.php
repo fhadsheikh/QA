@@ -45,7 +45,15 @@
                           <ul class="nav navbar-nav navbar-right">
                             <li><a href="#"><i class="fa fa-envelope-o"></i></a></li>
                             <li><a href="#"><i class="fa fa-bell"></i> <span class="label label-danger label-as-badge"><?php echo $this->session->userdata('count')['assignedtome'];?></span></a></li>
-                            <li><a href="#"><i class="fa fa-gear"></i></a></li>
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gear"></i></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="<?php echo base_url('admin/users'); ?>">Users</a></li>
+                                <li><a href="<?php echo base_url('user/logout'); ?>">Versions</a></li>
+                                <li><a href="<?php echo base_url('user/logout'); ?>">Modules</a></li>
+                                <li><a href="<?php echo base_url('user/logout'); ?>">Cases</a></li>
+                              </ul>
+                            </li>
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->session->userdata('FullName'); ?> <span class="caret"></span></a>
                               <ul class="dropdown-menu">
