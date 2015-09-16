@@ -49,8 +49,8 @@
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gear"></i></a>
                               <ul class="dropdown-menu">
                                 <li><a href="<?php echo base_url('admin/users'); ?>">Users</a></li>
-                                <li><a href="<?php echo base_url('user/logout'); ?>">Versions</a></li>
-                                <li><a href="<?php echo base_url('user/logout'); ?>">Modules</a></li>
+                                <li><a href="<?php echo base_url('admin/versions'); ?>">Versions</a></li>
+                                <li><a href="<?php echo base_url('admin/modules'); ?>">Modules</a></li>
                                 <li><a href="<?php echo base_url('user/logout'); ?>">Cases</a></li>
                               </ul>
                             </li>

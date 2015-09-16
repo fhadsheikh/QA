@@ -69,11 +69,6 @@
                             <p>
                                 You will be redirected to the home page and the student's student number should appear in the top right corner beside the log out link. 
                             </p>
-                        <br>
-                            <h2>Notes:</h2>
-                            <p>
-                                This features was added into ClockWork in ClockWork4
-                            </p>
                         </div>
                     </div>
                 </div>

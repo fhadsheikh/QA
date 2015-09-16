@@ -17,14 +17,14 @@
                 <div class="col-md-12">
                     <h2>ClockWork Web V5.14.7.23</h2>
                     <div class="progress">
-                      <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 40%">
-                        <span>Pass</span>
+                      <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 70%">
+                        <span>Pass </span>
                       </div>
-                      <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 20%">
-                        <span>Bugs</span>
+                      <div class="progress-bar progress-bar-danger progress-bar-striped" style="width:20%">
+                        <span>Fail </span>
                       </div>
-                      <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 40%">
-                        <span>Untested</span>
+                      <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 10%">
+                        <span>Untested </span>
                       </div>
                     </div>
                 </div>
@@ -51,24 +51,47 @@
                             <td></td>
                             <td></td>
                         </tr>
-                       
-                            <tr class="danger"> 
-                                <td>1.1</td>
-                                <td><span class="label label-danger">Bug</span></td>
-                                <td>Self Registration</td>
-                                <td><a href="<?php echo base_url('cases/testcase')?>">Log in as another user</a></td>
-                                <td>Not being redirected to right page</td>
-                                <td>Fhad Sheikh</td>
-                                <td><button class="btn btn-default">Submit to JIRA</button></td> 
-                            </tr>
-                       
+                        
+                        <?php foreach($workflowCases as $workflowCase): ?>
+                        <tr <?php if($workflowCase->result_id == 2){echo "class=\"danger\"";}?> >
+                            <td><?php echo $workflowCase->mastercase_id; ?></td>
+                            <td>
+                                <?php if($workflowCase->result_id == 1){echo "<span class=\"label label-success\">Pass</span>";} ?>
+                                <?php if($workflowCase->result_id == 2){echo "<span class=\"label label-danger\">Fail</span>";} ?>
+                                <?php if($workflowCase->result_id == 3){echo "<span class=\"label label-warning\">Untested</span>";} ?>
+                            </td>
+                            <td><?php echo $workflowCase->module_name; ?></td>
+                            <td><a href="<?php echo base_url('cases/testcase/'.$workflowCase->testcase_id)?>"><?php echo $workflowCase->mastercase_title; ?></a></td>
+                            <td><?php echo $workflowCase->testcase_notes; ?></td>
+                            <td><?php echo $workflowCase->user_name; ?></td>
+                            <td><button class="btn btn-default">Submit to JIRA</button></td>
+                        </tr>
+                        <?php endforeach; ?>
                         <tr>
                             <td>1.1</td>
                             <td><span class="label label-success">Pass</span></td>
-                            <td></td>
+                            <td>Self Registration</td>
                             <td>Request Accommodation Letter</td>
                             <td></td>
+                            <td>Fhad Sheikh</td>
+                            <td><button class="btn btn-default">Submit to JIRA</button></td>
+                        </tr>
+                        <tr>
+                            <td>1.1</td>
+                            <td><span class="label label-success">Pass</span></td>
+                            <td>Test Booking</td>
+                            <td>Auto Find Seat</td>
                             <td></td>
+                            <td>Azim Ahmed</td>
+                            <td><button class="btn btn-default">Submit to JIRA</button></td>
+                        </tr>
+                        <tr>
+                            <td>1.1</td>
+                            <td><span class="label label-success">Pass</span></td>
+                            <td>Online Intake</td>
+                            <td>Field Mapping</td>
+                            <td></td>
+                            <td>Azim Ahmed</td>
                             <td><button class="btn btn-default">Submit to JIRA</button></td>
                         </tr>
                         <tr class="active">
@@ -80,33 +103,186 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
-                            <td>1.1</td>
-                            <td><span class="label label-warning">Untested</span></td>
-                            <td></td>
-                            <td>Only allow student to book if LOA has been generated</td>
-                            <td></td>
-                            <td></td>
+                        <?php foreach($settingCases as $settingCase): ?>
+                        <tr <?php if($settingCase->result_id == 2){echo "class=\"danger\"";}?> >
+                            <td><?php echo $settingCase->mastercase_id; ?></td>
+                            <td>
+                                <?php if($settingCase->result_id == 1){echo "<span class=\"label label-success\">Pass</span>";} ?>
+                                <?php if($settingCase->result_id == 2){echo "<span class=\"label label-danger\">Fail</span>";} ?>
+                                <?php if($settingCase->result_id == 3){echo "<span class=\"label label-warning\">Untested</span>";} ?>
+                            </td>
+                            <td><?php echo $settingCase->module_name; ?></td>
+                            <td><a href="<?php echo base_url('cases/testcase/'.$settingCase->testcase_id)?>"><?php echo $settingCase->mastercase_title; ?></a></td>
+                            <td><?php echo $settingCase->testcase_notes; ?></td>
+                            <td><?php echo $settingCase->user_name; ?></td>
                             <td><button class="btn btn-default">Submit to JIRA</button></td>
                         </tr>
-                        <tr>
-                            <td>1.1</td>
-                            <td><span class="label label-warning">Untested</span></td>
-                            <td></td>
-                            <td>Only allow student to book if LOA has been generated</td>
-                            <td></td>
-                            <td></td>
+                        <?php endforeach; ?>
+                        <?php foreach($settingCases as $settingCase): ?>
+                        <tr <?php if($settingCase->result_id == 2){echo "class=\"danger\"";}?> >
+                            <td><?php echo $settingCase->mastercase_id; ?></td>
+                            <td>
+                                <?php if($settingCase->result_id == 1){echo "<span class=\"label label-success\">Pass</span>";} ?>
+                                <?php if($settingCase->result_id == 2){echo "<span class=\"label label-danger\">Fail</span>";} ?>
+                                <?php if($settingCase->result_id == 3){echo "<span class=\"label label-warning\">Untested</span>";} ?>
+                            </td>
+                            <td><?php echo $settingCase->module_name; ?></td>
+                            <td><a href="<?php echo base_url('cases/testcase/'.$settingCase->testcase_id)?>"><?php echo $settingCase->mastercase_title; ?></a></td>
+                            <td><?php echo $settingCase->testcase_notes; ?></td>
+                            <td><?php echo $settingCase->user_name; ?></td>
                             <td><button class="btn btn-default">Submit to JIRA</button></td>
                         </tr>
-                        <tr>
-                            <td>1.1</td>
-                            <td><span class="label label-warning">Untested</span></td>
-                            <td></td>
-                            <td>Only allow student to book if LOA has been generated</td>
-                            <td></td>
-                            <td></td>
+                        <?php endforeach; ?>
+                        <?php foreach($settingCases as $settingCase): ?>
+                        <tr <?php if($settingCase->result_id == 2){echo "class=\"danger\"";}?> >
+                            <td><?php echo $settingCase->mastercase_id; ?></td>
+                            <td>
+                                <?php if($settingCase->result_id == 1){echo "<span class=\"label label-success\">Pass</span>";} ?>
+                                <?php if($settingCase->result_id == 2){echo "<span class=\"label label-danger\">Fail</span>";} ?>
+                                <?php if($settingCase->result_id == 3){echo "<span class=\"label label-warning\">Untested</span>";} ?>
+                            </td>
+                            <td><?php echo $settingCase->module_name; ?></td>
+                            <td><a href="<?php echo base_url('cases/testcase/'.$settingCase->testcase_id)?>"><?php echo $settingCase->mastercase_title; ?></a></td>
+                            <td><?php echo $settingCase->testcase_notes; ?></td>
+                            <td><?php echo $settingCase->user_name; ?></td>
                             <td><button class="btn btn-default">Submit to JIRA</button></td>
                         </tr>
+                        <?php endforeach; ?>
+                        <?php foreach($settingCases as $settingCase): ?>
+                        <tr <?php if($settingCase->result_id == 2){echo "class=\"danger\"";}?> >
+                            <td><?php echo $settingCase->mastercase_id; ?></td>
+                            <td>
+                                <?php if($settingCase->result_id == 1){echo "<span class=\"label label-success\">Pass</span>";} ?>
+                                <?php if($settingCase->result_id == 2){echo "<span class=\"label label-danger\">Fail</span>";} ?>
+                                <?php if($settingCase->result_id == 3){echo "<span class=\"label label-warning\">Untested</span>";} ?>
+                            </td>
+                            <td><?php echo $settingCase->module_name; ?></td>
+                            <td><a href="<?php echo base_url('cases/testcase/'.$settingCase->testcase_id)?>"><?php echo $settingCase->mastercase_title; ?></a></td>
+                            <td><?php echo $settingCase->testcase_notes; ?></td>
+                            <td><?php echo $settingCase->user_name; ?></td>
+                            <td><button class="btn btn-default">Submit to JIRA</button></td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php foreach($settingCases as $settingCase): ?>
+                        <tr <?php if($settingCase->result_id == 2){echo "class=\"danger\"";}?> >
+                            <td><?php echo $settingCase->mastercase_id; ?></td>
+                            <td>
+                                <?php if($settingCase->result_id == 1){echo "<span class=\"label label-success\">Pass</span>";} ?>
+                                <?php if($settingCase->result_id == 2){echo "<span class=\"label label-danger\">Fail</span>";} ?>
+                                <?php if($settingCase->result_id == 3){echo "<span class=\"label label-warning\">Untested</span>";} ?>
+                            </td>
+                            <td><?php echo $settingCase->module_name; ?></td>
+                            <td><a href="<?php echo base_url('cases/testcase/'.$settingCase->testcase_id)?>"><?php echo $settingCase->mastercase_title; ?></a></td>
+                            <td><?php echo $settingCase->testcase_notes; ?></td>
+                            <td><?php echo $settingCase->user_name; ?></td>
+                            <td><button class="btn btn-default">Submit to JIRA</button></td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php foreach($settingCases as $settingCase): ?>
+                        <tr <?php if($settingCase->result_id == 2){echo "class=\"danger\"";}?> >
+                            <td><?php echo $settingCase->mastercase_id; ?></td>
+                            <td>
+                                <?php if($settingCase->result_id == 1){echo "<span class=\"label label-success\">Pass</span>";} ?>
+                                <?php if($settingCase->result_id == 2){echo "<span class=\"label label-danger\">Fail</span>";} ?>
+                                <?php if($settingCase->result_id == 3){echo "<span class=\"label label-warning\">Untested</span>";} ?>
+                            </td>
+                            <td><?php echo $settingCase->module_name; ?></td>
+                            <td><a href="<?php echo base_url('cases/testcase/'.$settingCase->testcase_id)?>"><?php echo $settingCase->mastercase_title; ?></a></td>
+                            <td><?php echo $settingCase->testcase_notes; ?></td>
+                            <td><?php echo $settingCase->user_name; ?></td>
+                            <td><button class="btn btn-default">Submit to JIRA</button></td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php foreach($settingCases as $settingCase): ?>
+                        <tr <?php if($settingCase->result_id == 2){echo "class=\"danger\"";}?> >
+                            <td><?php echo $settingCase->mastercase_id; ?></td>
+                            <td>
+                                <?php if($settingCase->result_id == 1){echo "<span class=\"label label-success\">Pass</span>";} ?>
+                                <?php if($settingCase->result_id == 2){echo "<span class=\"label label-danger\">Fail</span>";} ?>
+                                <?php if($settingCase->result_id == 3){echo "<span class=\"label label-warning\">Untested</span>";} ?>
+                            </td>
+                            <td><?php echo $settingCase->module_name; ?></td>
+                            <td><a href="<?php echo base_url('cases/testcase/'.$settingCase->testcase_id)?>"><?php echo $settingCase->mastercase_title; ?></a></td>
+                            <td><?php echo $settingCase->testcase_notes; ?></td>
+                            <td><?php echo $settingCase->user_name; ?></td>
+                            <td><button class="btn btn-default">Submit to JIRA</button></td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php foreach($settingCases as $settingCase): ?>
+                        <tr <?php if($settingCase->result_id == 2){echo "class=\"danger\"";}?> >
+                            <td><?php echo $settingCase->mastercase_id; ?></td>
+                            <td>
+                                <?php if($settingCase->result_id == 1){echo "<span class=\"label label-success\">Pass</span>";} ?>
+                                <?php if($settingCase->result_id == 2){echo "<span class=\"label label-danger\">Fail</span>";} ?>
+                                <?php if($settingCase->result_id == 3){echo "<span class=\"label label-warning\">Untested</span>";} ?>
+                            </td>
+                            <td><?php echo $settingCase->module_name; ?></td>
+                            <td><a href="<?php echo base_url('cases/testcase/'.$settingCase->testcase_id)?>"><?php echo $settingCase->mastercase_title; ?></a></td>
+                            <td><?php echo $settingCase->testcase_notes; ?></td>
+                            <td><?php echo $settingCase->user_name; ?></td>
+                            <td><button class="btn btn-default">Submit to JIRA</button></td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php foreach($settingCases as $settingCase): ?>
+                        <tr <?php if($settingCase->result_id == 2){echo "class=\"danger\"";}?> >
+                            <td><?php echo $settingCase->mastercase_id; ?></td>
+                            <td>
+                                <?php if($settingCase->result_id == 1){echo "<span class=\"label label-success\">Pass</span>";} ?>
+                                <?php if($settingCase->result_id == 2){echo "<span class=\"label label-danger\">Fail</span>";} ?>
+                                <?php if($settingCase->result_id == 3){echo "<span class=\"label label-warning\">Untested</span>";} ?>
+                            </td>
+                            <td><?php echo $settingCase->module_name; ?></td>
+                            <td><a href="<?php echo base_url('cases/testcase/'.$settingCase->testcase_id)?>"><?php echo $settingCase->mastercase_title; ?></a></td>
+                            <td><?php echo $settingCase->testcase_notes; ?></td>
+                            <td><?php echo $settingCase->user_name; ?></td>
+                            <td><button class="btn btn-default">Submit to JIRA</button></td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php foreach($settingCases as $settingCase): ?>
+                        <tr <?php if($settingCase->result_id == 2){echo "class=\"danger\"";}?> >
+                            <td><?php echo $settingCase->mastercase_id; ?></td>
+                            <td>
+                                <?php if($settingCase->result_id == 1){echo "<span class=\"label label-success\">Pass</span>";} ?>
+                                <?php if($settingCase->result_id == 2){echo "<span class=\"label label-danger\">Fail</span>";} ?>
+                                <?php if($settingCase->result_id == 3){echo "<span class=\"label label-warning\">Untested</span>";} ?>
+                            </td>
+                            <td><?php echo $settingCase->module_name; ?></td>
+                            <td><a href="<?php echo base_url('cases/testcase/'.$settingCase->testcase_id)?>"><?php echo $settingCase->mastercase_title; ?></a></td>
+                            <td><?php echo $settingCase->testcase_notes; ?></td>
+                            <td><?php echo $settingCase->user_name; ?></td>
+                            <td><button class="btn btn-default">Submit to JIRA</button></td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php foreach($settingCases as $settingCase): ?>
+                        <tr <?php if($settingCase->result_id == 2){echo "class=\"danger\"";}?> >
+                            <td><?php echo $settingCase->mastercase_id; ?></td>
+                            <td>
+                                <?php if($settingCase->result_id == 1){echo "<span class=\"label label-success\">Pass</span>";} ?>
+                                <?php if($settingCase->result_id == 2){echo "<span class=\"label label-danger\">Fail</span>";} ?>
+                                <?php if($settingCase->result_id == 3){echo "<span class=\"label label-warning\">Untested</span>";} ?>
+                            </td>
+                            <td><?php echo $settingCase->module_name; ?></td>
+                            <td><a href="<?php echo base_url('cases/testcase/'.$settingCase->testcase_id)?>"><?php echo $settingCase->mastercase_title; ?></a></td>
+                            <td><?php echo $settingCase->testcase_notes; ?></td>
+                            <td><?php echo $settingCase->user_name; ?></td>
+                            <td><button class="btn btn-default">Submit to JIRA</button></td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php foreach($settingCases as $settingCase): ?>
+                        <tr <?php if($settingCase->result_id == 2){echo "class=\"danger\"";}?> >
+                            <td><?php echo $settingCase->mastercase_id; ?></td>
+                            <td>
+                                <?php if($settingCase->result_id == 1){echo "<span class=\"label label-success\">Pass</span>";} ?>
+                                <?php if($settingCase->result_id == 2){echo "<span class=\"label label-danger\">Fail</span>";} ?>
+                                <?php if($settingCase->result_id == 3){echo "<span class=\"label label-warning\">Untested</span>";} ?>
+                            </td>
+                            <td><?php echo $settingCase->module_name; ?></td>
+                            <td><a href="<?php echo base_url('cases/testcase/'.$settingCase->testcase_id)?>"><?php echo $settingCase->mastercase_title; ?></a></td>
+                            <td><?php echo $settingCase->testcase_notes; ?></td>
+                            <td><?php echo $settingCase->user_name; ?></td>
+                            <td><button class="btn btn-default">Submit to JIRA</button></td>
+                        </tr>
+                        <?php endforeach; ?>
                     </table>
                 </div>
                 

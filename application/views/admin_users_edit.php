@@ -29,7 +29,7 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
-                                <button type="submit" class="form-control">Add User</button>
+                                <button type="submit" class="form-control">Edit User</button>
                             </form>
                 </div>
                 

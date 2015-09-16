@@ -64,9 +64,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => '160.153.71.38',
+	'username' => 'tproadmin',
+	'password' => 'Hotmail1234',
 	'database' => 'QA',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
