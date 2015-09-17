@@ -36,5 +36,36 @@ class Versions_model extends CI_Model{
     
     public function addVersion($data){
         $this->db->insert('versions',$data);
+        
+        $version = $this->input->post('version');
+        $this->db->select('*');
+        $this->db->from('versions');
+        $this->db->where('version_number',$version);
+        $query = $this->db->get();
+        $result = $query->row();
+        $version_id = $result->version_id;
+            
+        $this->copyCases($version_id);
+        redirect('cases');
+    }
+    
+    
+    
+    public function copyCases($version_id){
+        $this->db->select('*');
+        $this->db->from('mastercases');
+        $query = $this->db->get();
+        $masterCases = $query->result();
+        
+        foreach($masterCases as $masterCase){
+            $data = array(
+                'testcase_version' => $version_id,
+                'testcase_mastercase' => $masterCase->mastercase_id
+            );
+            
+            $this->db->insert('testcases',$data);
+            
+        }
+        
     }
 }
