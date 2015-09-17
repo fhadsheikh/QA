@@ -45,7 +45,8 @@
             <div class="row ">
                 
                 <div class="col-md-12" >
-                    <table class="table table-hover">
+                    <table id="ticket-table" class="table table-hover" cellspacing="0" width="100%">
+                        <thead>
                         <tr>
                             <th class="col-md-1">ID</th>
                             <th class="col-md-1">Status</th>
@@ -55,6 +56,7 @@
                             <th class="col-md-1">Tech</th>
                             <th class="col-md-1"></th>
                         </tr>
+                        </thead>
                         <tr class="active">
                             <td><strong>Workflows</strong></td>
                             <td></td>

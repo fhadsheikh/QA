@@ -79,6 +79,18 @@ class Cases extends CI_Controller {
         $this->cases->update($id,$data);
         
         redirect('cases');
+    }
+    
+    public function import(){
+        $this->load->model('Cases_model','cases');
+        $filename= 'filename.csv';
+        $filename2= 'filename2.csv';
+        $delimiter = ',';
+        $array = $this->cases->importMasters($filename,$delimiter);
+        $array2 = $this->cases->importTests($filename2,$delimiter);
+        
+        echo "<pre>",print_r($array)."<pre>";
+        echo "<pre>",print_r($array2)."<pre>";
         
     }
     

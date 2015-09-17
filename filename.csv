@@ -1,0 +1,49 @@
+mastercase_title,mastercase_description
+Accommodations expiry date control,"This setting uses a date control from 'Accommodations' form that has 'ActAsAccommodationExpiryDate' set to 'True'. If the date control has a date for a student in the past, it will not allow student to book a test or exam"
+Assets,This setting allows user to add assets in clockwork. Assets in clockwork are resources that are available to students at a seat where they can write test or exam. These assets are mapped to specific accommodation in clockwork so that a student with that accommodation will trigger the asset listed in this setting.
+Institution Name,Deprecated feature. Removed from testing.
+Room availability mapping,"This setting allows user to map a rooms availability to a other rooms. For example: if Room A is available then Room B and C should be available with it. Also, if Room D is available, then room E should be available as well. Users can set availability for the parent room which in our example are Room A and Room D. Clockwork will automatically consider other child rooms as available based on parent rooms availability. "
+Room to use for all room availability,This setting allows user to map a rooms availability to all the other rooms that are listed as exam or test rooms.
+Rooms,This setting allows user to list all the rooms that are test rooms. These rooms need to exist in clockwork database before adding them here. User can also add assets for each room in this section. This helps clockwork pick the right room for student when booking test online. 
+Rules -> Active,Enables or disables rules for types of rooms in question
+Rules -> Include non-virtual rooms,User can set what type of rooms to apply the rules to 
+Rules -> Include virtual rooms,User can set what type of rooms to apply the rules to 
+Rules -> Minutes before,Allows clockwork to check for room availability x amount of minutes before requested time
+Rules -> Minutes after,Allows clockwork to check for room availability x amount of minutes after requested time
+Rules -> Stop looking if found at least one,Enable to show student all the options that are available based on before/after minutes set
+Rules -> Shift time to match start of day,Enabling this feature shifts the selected time of class test to start of day
+Rules -> Shift time to match end of day,Enabling this feature shifts the selected time of class test to end of day
+Rules -> Enforce overlap with class time,Enabling this feature will allow students to pick from multiple available options for tests/exams based on minutes value entered
+Rules -> Allow shifting time to work around timetable for other courses,Enabling this feature will not allow students to book tests/exams on the days and times other courses classes are taking place
+Rules -> Ignore asset rules,Enable to ignore any assets listed in clockwork
+Rules -> Rooms to exclude,Allows clockwork to exclude comma separated list of room ids from room searching when student books a test/exam
+Special Accommodations -> Extra time,Triggers a change in class test time according to method of calculation of extra time accommodation
+Special Accommodations -> Break time,Triggers a change in class test time according to method of calculation of break time accommodation
+Special Accommodations -> Add icon,User can have a icon in the appointment when the test or exam is booked
+Special Accommodations -> Email coordinator,Triggers an email to be sent out. Email template can be set in tests/exams booking Email section.
+Special Accommodations -> No booking online,User can ban a student from booking online
+Special Accommodations -> Time of day,User can describe start and end of day times for exams to be booked
+Special Accommodations -> Max per day,Students can be restricted to have maximum amount of tests/exams a day
+Special Accommodations -> Days rest,Students can be provided days rest based on number of days entered in this setting
+Special Accommodations -> Start end of day slide,Describe start and end time of testing days for test booking to be snapped back in place to match either the start or end time
+Special Accommodations -> Snap time,Snap rules can be set based on the time student enters on the web. 
+Custom wizard step wording: Indicate class date/time,
+Custom wizard step wording: Select course,
+Custom wizard step wording: Select scheduled time,
+Custom wizard step wording: Welcome,
+Don’t ask student to confirm instructor information,
+Hide the 'Check all'/Check none' links when choosing which accommodations for the test/exam,
+Important note for student when selecting an available test date/time,
+Instruction message for select course step (appear underneath the course drop-list),
+Instructions for Choose Accommodations step,
+Message to student when no existing class date/times are available to choose from,
+Note for Choose Accommodations step,
+Room found message,
+Room not found message,
+Select a date time message to students (override),
+Select the class test date/time instruction message,
+Show the class date time only in the 'My upcoming appointments' list for tests and exams,
+Show the test location on the 'My upcoming events' listing,
+Show the test location: location display format,
+Welcome message for the information (home) page,
+Welcome message for the test booking wizard (step 1),

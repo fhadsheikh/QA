@@ -21,9 +21,9 @@
         <script>
         $(document).ready(function() {
             $('#ticket-table').DataTable({ 
+                "pagelength":100;
             });
                 var table = $('#ticket-table').DataTable();
-                table.order([4, 'desc']).draw();
                                      
             
             

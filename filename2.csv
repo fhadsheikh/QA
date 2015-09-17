@@ -1,0 +1,49 @@
+Settings,Result,Error
+Accommodations expiry date control,Pass,
+Assets,Pass,
+Institution Name,,
+Room availability mapping,Fail,No availability gets set. JIRA ticket is created
+Room to use for all room availability,Pass,
+Rooms,Pass,
+Rules -> Active,Pass,
+Rules -> Include non-virtual rooms,Pass,
+Rules -> Include virtual rooms,Pass,
+Rules -> Minutes before,Pass,
+Rules -> Minutes after,Pass,
+Rules -> Stop looking if found at least one,Pass,
+Rules -> Shift time to match start of day,Fail,JIRA ticket created. doesn't shift times.
+Rules -> Shift time to match end of day,Fail,JIRA ticket created. doesn't shift times.
+Rules -> Enforce overlap with class time,Fail,JIRA ticket created. Multiple bookings didn't show up.
+Rules -> Allow shifting time to work around timetable for other courses,Pass,
+Rules -> Ignore asset rules,Pass,
+Rules -> Rooms to exclude,Pass,
+Special Accommodations -> Extra time,Pass,
+Special Accommodations -> Break time,Pass,
+Special Accommodations -> Add icon,Fail,Icon doesn't show. Awaiting approval to log in JIRA
+Special Accommodations -> Email coordinator,Pass,
+Special Accommodations -> No booking online,Fail,Let's student book test online. Awaiting approval to log in JIRA
+Special Accommodations -> Time of day,Pass,overridebookingnote parameter didn't enter the notes
+Special Accommodations -> Max per day,Pass,overridebookingnote parameter didn't enter the notes
+Special Accommodations -> Days rest,Pass,overridebookingnote parameter didn't enter the notes
+Special Accommodations -> Start end of day slide,Pass,overridebookingnote parameter didn't enter the notes
+Special Accommodations -> Snap time,Pass,
+Custom wizard step wording: Indicate class date/time,,
+Custom wizard step wording: Select course,,
+Custom wizard step wording: Select scheduled time,,
+Custom wizard step wording: Welcome,,
+Don’t ask student to confirm instructor information,,
+Hide the 'Check all'/Check none' links when choosing which accommodations for the test/exam,,
+Important note for student when selecting an available test date/time,,
+Instruction message for select course step (appear underneath the course drop-list),,
+Instructions for Choose Accommodations step,,
+Message to student when no existing class date/times are available to choose from,,
+Note for Choose Accommodations step,,
+Room found message,,
+Room not found message,,
+Select a date time message to students (override),,
+Select the class test date/time instruction message,,
+Show the class date time only in the 'My upcoming appointments' list for tests and exams,,
+Show the test location on the 'My upcoming events' listing,,
+Show the test location: location display format,,
+Welcome message for the information (home) page,,
+Welcome message for the test booking wizard (step 1),,

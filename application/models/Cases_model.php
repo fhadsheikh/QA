@@ -120,4 +120,75 @@ class Cases_model extends CI_Model{
         return $stats;
         
     }
+    
+    public function importMasters($filename, $delimiter){
+        	if(!file_exists($filename) || !is_readable($filename))
+                return 'asdf';
+
+            $header = NULL;
+            $data = array();
+            if (($handle = fopen($filename, 'r')) !== FALSE)
+            {
+                while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE)
+                {
+                    if(!$header)
+                        $header = $row;
+                    else
+                        $data[] = array_combine($header, $row);
+                }
+                fclose($handle);
+            }
+        
+        foreach($data as $key => $dat){
+            $dat['mastercase_module'] = 1;
+            $dat['mastercase_casetype'] = 2;
+            
+//            $this->db->insert('mastercases',$dat);
+        }
+            return $dat;
+        
+    }
+    
+        public function importTests($filename2, $delimiter){
+        	if(!file_exists($filename2) || !is_readable($filename2))
+                return 'asdf';
+
+            $header = NULL;
+            $data = array();
+            if (($handle = fopen($filename2, 'r')) !== FALSE)
+            {
+                while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE)
+                {
+                    if(!$header)
+                        $header = $row;
+                    else
+                        $data[] = array_combine($header, $row);
+                }
+                fclose($handle);
+            }
+              
+        foreach($data as $key => $dat){
+            $this->db->select('*');
+            $this->db->from('mastercases');
+            $this->db->where('mastercase_title',$dat['Settings']);
+            $query = $this->db->get();
+            $result = $query->row();
+            
+            if($dat['Result']=='Pass')
+            {$result2 = 1;} else if ($dat['Result']=='Fail')
+            {$result2 = 2;} else 
+            {$result2 = 0;}
+            $case[$result->mastercase_id]['testcase_tech'] = 2;
+            $case[$result->mastercase_id]['testcase_result'] = $result2; 
+            $case[$result->mastercase_id]['testcase_version'] = 1;
+            $case[$result->mastercase_id]['testcase_notes'] = $dat['Error'];
+            $case[$result->mastercase_id]['testcase_mastercase'] = $result->mastercase_id;
+            
+            $this->db->insert('testcases',$case[$result->mastercase_id]);
+            
+        }
+            
+            return $case;
+        
+    }
 }
